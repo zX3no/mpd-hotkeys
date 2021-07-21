@@ -1,4 +1,5 @@
-//#![windows_subsystem = "windows"]
+#![windows_subsystem = "windows"]
+
 use hotkey::{keys, modifiers, Listener};
 use mpd::Client;
 
@@ -50,7 +51,9 @@ fn main() {
     hk.register_hotkey(modifiers::SHIFT, keys::CAPS_LOCK, pause)
         .unwrap();
     //115 is f4
-    hk.register_hotkey(alt_shift, 115 as u32, || std::process::exit(0x100))
-        .unwrap();
+    hk.register_hotkey(alt_shift | modifiers::CONTROL, 115 as u32, || {
+        std::process::exit(0x100)
+    })
+    .unwrap();
     hk.listen();
 }
