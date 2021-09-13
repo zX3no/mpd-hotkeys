@@ -48,7 +48,7 @@ fn main() {
     hk.register_hotkey(alt_shift, 'W' as u32, next).unwrap();
     hk.register_hotkey(alt_shift, '1' as u32, vol_down).unwrap();
     hk.register_hotkey(alt_shift, '2' as u32, vol_up).unwrap();
-    hk.register_hotkey(modifiers::SHIFT, keys::CAPS_LOCK, pause)
+    hk.register_hotkey(modifiers::SHIFT, keys::BACKSPACE, pause)
         .unwrap();
     //115 is f4
     hk.register_hotkey(alt_shift | modifiers::CONTROL, 115_u32, || {
