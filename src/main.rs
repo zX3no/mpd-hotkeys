@@ -58,6 +58,7 @@ fn main() {
     hk.register_hotkey(alt_shift, '2' as u32, vol_up).unwrap();
     hk.register_hotkey(modifiers::SHIFT, keys::ESCAPE, pause)
         .unwrap();
+
     //115 is f4
     hk.register_hotkey(alt_shift | modifiers::CONTROL, 115_u32, || {
         std::process::exit(0x100)
